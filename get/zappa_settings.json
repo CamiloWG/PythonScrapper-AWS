@@ -20,7 +20,7 @@
         "events": [ 
         { 
             "function": "main.app", 
-            "expression": "rate(2 hours)" 
+            "expression": "cron(0 9 ? * MON *)"
         }]
     }
 }

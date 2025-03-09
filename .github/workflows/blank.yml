@@ -38,9 +38,11 @@ jobs:
           pip install -r requirements.txt
       - name: Pruebas unitarias 
         run: |
+          source env/bin/activate
           pytest 
       - name: Revision de codigo
         run: |
+          source env/bin/activate
           flake8 get/main.py || true
           flake8 procesar/procesar.py || true
       - name: Configure AWS Credentials

@@ -31,10 +31,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
            python-version: '3.9'
-      - name: Install dependencies
+      - name: Configurar entorno virtual
         run: |
-          python -m pip install --upgrade pip
-          pip install --upgrade pip setuptools
+          python -m venv env  
+          source env/bin/activate
           pip install -r requirements.txt
       - name: Pruebas unitarias 
         run: |
@@ -58,11 +58,13 @@ jobs:
       - name: desplegar Lambda obtener pagina
         run: |
           cd get
+          source ../env/bin/activate
           zappa update
 
       # Desplegar Lambda 2
       - name: desplegar Lambda procesar pagina
         run: |
           cd procesar
+          source ../env/bin/activate
           zappa update
         

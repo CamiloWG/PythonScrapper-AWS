@@ -4,6 +4,7 @@ import datetime
 from bs4 import BeautifulSoup
 
 
+
 s3_client = boto3.client("s3")
 BUCKET_DESTINO = "casas-final-2423"
 
